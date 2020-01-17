@@ -1,0 +1,36 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "storeID",
+      "profit"
+    ],
+    "properties": {
+      "storeID": {
+        "$id": "#/items/properties/storeID",
+        "type": "integer",
+        "title": "The Storeid Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "profit": {
+        "$id": "#/items/properties/profit",
+        "type": "integer",
+        "title": "The Profit Schema",
+        "default": 0,
+        "examples": [
+          48
+        ]
+      }
+    }
+  }
+}
