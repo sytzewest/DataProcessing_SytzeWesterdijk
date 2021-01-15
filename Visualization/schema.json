@@ -1,36 +1,204 @@
 {
-  "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/root.json",
-  "type": "array",
-  "title": "The Root Schema",
-  "items": {
-    "$id": "#/items",
-    "type": "object",
-    "title": "The Items Schema",
-    "required": [
-      "storeID",
-      "profit"
-    ],
-    "properties": {
-      "storeID": {
-        "$id": "#/items/properties/storeID",
-        "type": "integer",
-        "title": "The Storeid Schema",
-        "default": 0,
-        "examples": [
-          1
-        ]
-      },
-      "profit": {
-        "$id": "#/items/properties/profit",
-        "type": "integer",
-        "title": "The Profit Schema",
-        "default": 0,
-        "examples": [
-          48
-        ]
+  "description": "schema validating stores, sales and products",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "stores": {
+          "$id": "#root/stores",
+          "title": "Stores",
+          "type": "array",
+          "default": [],
+          "items": {
+            "$id": "#root/stores/items",
+            "title": "Items",
+            "type": "object",
+            "required": [
+              "id",
+              "city"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#root/stores/items/id",
+                "title": "Id",
+                "type": "integer",
+                "examples": [
+                  1
+                ],
+                "default": 0
+              },
+              "city": {
+                "$id": "#root/stores/items/city",
+                "title": "City",
+                "type": "string",
+                "default": "",
+                "examples": [
+                  "Emmen"
+                ],
+                "pattern": "^.*$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "sales": {
+          "$id": "#root/sales",
+          "title": "Sales",
+          "type": "array",
+          "default": [],
+          "items": {
+            "$id": "#root/sales/items",
+            "title": "Items",
+            "type": "object",
+            "required": [
+              "id",
+              "storeID",
+              "productID",
+              "sales",
+              "cost",
+              "profit"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#root/sales/items/id",
+                "title": "Id",
+                "type": "integer",
+                "examples": [
+                  1
+                ],
+                "default": 0
+              },
+              "storeID": {
+                "$id": "#root/sales/items/storeID",
+                "title": "Storeid",
+                "type": "integer",
+                "examples": [
+                  1
+                ],
+                "default": 0
+              },
+              "productID": {
+                "$id": "#root/sales/items/productID",
+                "title": "Productid",
+                "type": "integer",
+                "examples": [
+                  5
+                ],
+                "default": 0
+              },
+              "sales": {
+                "$id": "#root/sales/items/sales",
+                "title": "Sales",
+                "type": "integer",
+                "examples": [
+                  48
+                ],
+                "default": 0
+              },
+              "cost": {
+                "$id": "#root/sales/items/cost",
+                "title": "Cost",
+                "type": "integer",
+                "examples": [
+                  31
+                ],
+                "default": 0
+              },
+              "profit": {
+                "$id": "#root/sales/items/profit",
+                "title": "Profit",
+                "type": "integer",
+                "examples": [
+                  17
+                ],
+                "default": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "sales": {
+          "$id": "#root/sales",
+          "title": "Sales",
+          "type": "array",
+          "default": [],
+          "items": {
+            "$id": "#root/sales/items",
+            "title": "Items",
+            "type": "object",
+            "required": [
+              "id",
+              "storeID",
+              "productID",
+              "sales",
+              "cost",
+              "profit"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#root/sales/items/id",
+                "title": "Id",
+                "type": "integer",
+                "examples": [
+                  1
+                ],
+                "default": 0
+              },
+              "storeID": {
+                "$id": "#root/sales/items/storeID",
+                "title": "Storeid",
+                "type": "integer",
+                "examples": [
+                  1
+                ],
+                "default": 0
+              },
+              "productID": {
+                "$id": "#root/sales/items/productID",
+                "title": "Productid",
+                "type": "integer",
+                "examples": [
+                  5
+                ],
+                "default": 0
+              },
+              "sales": {
+                "$id": "#root/sales/items/sales",
+                "title": "Sales",
+                "type": "integer",
+                "examples": [
+                  48
+                ],
+                "default": 0
+              },
+              "cost": {
+                "$id": "#root/sales/items/cost",
+                "title": "Cost",
+                "type": "integer",
+                "examples": [
+                  31
+                ],
+                "default": 0
+              },
+              "profit": {
+                "$id": "#root/sales/items/profit",
+                "title": "Profit",
+                "type": "integer",
+                "examples": [
+                  17
+                ],
+                "default": 0
+              }
+            }
+          }
+        }
       }
     }
-  }
+  ]
 }

@@ -14,7 +14,7 @@
     <h2>Amount of profit made selling sport products organised by storeID</h2>
     <?php
 
-    // Validate the result from the $json to the schema.json saved locally to check if the data is correct, otherwise return the appropiate error.
+    // Validate the result from the $json to the schema.json saved locally to check if the data is correct, otherwise return the appropriate error.
 
     require_once 'vendor/autoload.php';
 
@@ -45,7 +45,7 @@
 
     <?php
     
-    // Validate the result from the $xml to the schema.xml saved locally to check if the data is correct, otherwise return the appropiate error based on global errors.
+    // Validate the result from the $xml to the schema.xml saved locally to check if the data is correct, otherwise return the appropriate error based on global errors.
 
     function libxml_display_error($error)
     {

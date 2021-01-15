@@ -1,16 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="Data">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="Data" maxOccurs="unbounded" minOccurs="0">
-          <xs:complexType>
+    <xs:choice>
+      <xs:element name="sales">
+      <xs:element name="products">
+      <xs:element name="sales">
+    </xs:choice>
+        <xs:complexType>
             <xs:sequence>
-              <xs:element type="xs:byte" name="storeID"/>
-              <xs:element type="xs:byte" name="profit"/>
+                <xs:element name="id" type="xs:integer"/>
+                <xs:choice>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="description" type="xs:string"/>
+                        <xs:element minOccurs="0" name="brand" type="xs:string"/>
+                    </xs:sequence>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="city" type="xs:string"/>
+                    </xs:sequence>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="storeID" type="xs:integer"/>
+                        <xs:element minOccurs="0" name="productID" type="xs:integer"/>  
+                        <xs:element minOccurs="0" name="sales" type="xs:integer"/>
+                        <xs:element minOccurs="0" name="cost" type="xs:integer"/>   
+                        <xs:element minOccurs="0" name="profit" type="xs:integer"/>                            
+                    </xs:sequence>
+                </xs:choice>
             </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
