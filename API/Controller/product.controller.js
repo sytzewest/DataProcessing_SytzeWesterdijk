@@ -2,10 +2,8 @@ var dbConn = require('../dbconnection.js');
 var express = require('express');
 var app = express();
 
-
-
 // Retrieve product using its id 
-app.getAll(type, req, res) {
+app.get('/', function (req, res) {
     
     dbConn.query('SELECT * FROM ' + this.type, function (error, results, fields) {
         if (error) throw error;
